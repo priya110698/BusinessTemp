@@ -1,0 +1,134 @@
+body {
+  color: #fff;
+  margin: 0px;
+}
+
+.row {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.clippath {
+  /*Chrome,Safari*/
+  -webkit-clip-path: polygon(48% 0%, 100% 0%, 100% 100%, 0% 100%);
+  /*Firefox*/
+  clip-path: polygon(48% 0%, 100% 0%, 100% 100%, 0% 100%);
+  background: red;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background: red;
+  z-index: 9;
+  padding: 10px;
+}
+
+.left_header {
+  float: left;
+}
+
+.right_header {
+  float: right;
+}
+
+.nav-menu li {
+  float: left;
+  list-style-type: none;
+  margin-right: 10px;
+}
+
+.about_section {
+  padding: 80px 15px;
+}
+
+.about_section p {
+  color: #000;
+  margin: 0 auto;
+  display: block;
+}
+
+.service_section {
+  padding: 80px 15px;
+}
+
+.about_section img {
+  width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.card {
+  -webkit-box-shadow: 0px 0px 11px 1px rgba(1, 1, 1, 0.15);
+          box-shadow: 0px 0px 11px 1px rgba(1, 1, 1, 0.15);
+}
+
+.card p {
+  color: #656565;
+  padding: 15px;
+}
+
+.card img {
+  padding: 15px;
+  height: 300px;
+}
+
+.test_card p {
+  background-color: #8080802e;
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid #80808014;
+  border-radius: 3px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.test_card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 5px solid #dbdada78;
+}
+
+.test_card P::before {
+  width: 0;
+  height: 0;
+  right: 15px;
+  bottom: 16px;
+  content: " ";
+  display: block;
+  position: absolute;
+  border-bottom: 20px solid #fff;
+  border-right: 0 solid transparent;
+  border-left: 15px solid transparent;
+  border-left-style: inset;
+  border-bottom-style: inset;
+}
+
+.test_card p::after {
+  width: 0;
+  height: 0;
+  right: 15px;
+  bottom: 16px;
+  content: " ";
+  display: block;
+  position: absolute;
+  border-style: solid;
+  border-width: 20px 20px 0 0;
+  border-color: #c5c5c5 transparent transparent transparent;
+}
+
+.testmonial_section {
+  padding: 80px 15px;
+}
+/*# sourceMappingURL=style.css.map */
