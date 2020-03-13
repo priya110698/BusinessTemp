@@ -1,3 +1,4 @@
+
 $clr:(
     primary:#656565,
     secondary:#fff,
@@ -8,7 +9,60 @@ $clr:(
     @return map-get($map:$clr,$key:$getClr);
 }
 
+
+// animation
+@mixin inline-animation($duration) {
+    $name: inline-#{unique-id()};
+  
+    @keyframes #{$name} {
+      @content;
+    }
+  
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-iteration-count: 1;
+  }
+  
+  .pulse {
+    @include inline-animation($duration) {
+    //   from { background-color: yellow }
+    //   to { background-color: red }
+
+    from {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+      }
+    
+      to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+//Right Animation
+ .slideRight {
+  @include inline-animation(2s)  {
+    from {
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+  
+  
+  
+
 body{
+
+   
     // background-color:colorName(primary);
     color:map-get($map: $clr, $key: secondary);
     margin: 0px;
@@ -33,7 +87,7 @@ img{
 
 /*Firefox*/
 clip-path: polygon(48% 0%,100% 0%,100% 100%,0% 100%);
-background: red;
+background:#4f63ad;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -49,13 +103,17 @@ background: red;
     left: 0px;
     right: 0px;
     // height: 100px;
-    background: red;
+    background: #4f63ad;
     z-index: 9;
     padding: 10px;
 }
 
 .left_header {
     float: left;
+
+    a{
+        color: #fff;
+    }
 }
 
 .right_header {
@@ -66,11 +124,16 @@ background: red;
     li{
         float: left;
         list-style-type: none;
-        margin-right: 10px;
+        margin-right: 20px;
+        cursor: pointer;
+
+        a{
+            color: #fff;
+        }
     }
 }
 @mixin sec-padding {
-    padding: 80px 15px;
+    padding: 40px 15px;
 }
 .about_section{
     @include sec-padding();
@@ -95,32 +158,43 @@ background: red;
 .card{
     box-shadow: 0px 0px 11px 1px rgba(1, 1, 1, 0.15);
   p {
-    color: #656565;
+    color: #656565; 
     padding: 15px;
   }
 
   img{
     padding: 15px;
-    height: 300px;
+    height: 340px;
   }
 }
+p.title_line {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #656565;
+}
+
 
 .test_card{
     p {
-    background-color: #8080802e;
-    padding: 20px;
-    margin-top: 10px;
-    border: 1px solid #80808014;
-    border-radius: 3px;
-    color: #000;
-    font-size: 16px;
-    font-weight: 500;
+        background-color: #8080801c;
+        padding: 20px;
+        margin-top: 5px;
+        border: 1px solid #80808014;
+        border-radius: 3px;
+        color: #656565;
+        font-size: 16px;
+        font-weight: 400;
     }
       img{
         width: 100px;
         height: 100px;
         border-radius: 100%;
-        border: 5px solid #dbdada78;
+        border:5px solid #dbdada1f;
       }
 
       P::before {
@@ -141,17 +215,46 @@ background: red;
     p::after {
         width: 0;
         height: 0;
-        right: 15px;
-        bottom: 16px;
+        right: 14px;
+        bottom: 15px;
         content: " ";
         display: block;
         position: absolute;
         border-style: solid;
-        border-width: 20px 20px 0 0;
-        border-color: #c5c5c5 transparent transparent transparent;
+        border-width: 22px 20px 0px 5px;
+        border-color: #c5c5c57a transparent transparent transparent;
     }
 }
 
 .testmonial_section{
-    padding: 80px 15px;    
+    padding: 40px 15px;    
   }
+
+.contact_section{   
+    .address_line{
+        p {
+            color: #656565;
+            padding: 0px 15px;
+            font-weight: 500;
+
+            span:first-child{
+                font-weight: 500;
+            }
+
+            span{
+                font-weight: normal;
+                text-align: left;
+            }
+        }
+    }   
+    
+
+    form
+    {
+        .row{
+            margin-bottom: 15px;
+        }
+
+    }
+  }
+  
