@@ -7,17 +7,20 @@
         <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
         <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     </head>
-<body>
+<body class="">
     <!-- <img src="images/music_img_1.png"/>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
         Ratione at expedita earum provident eveniet quibusdam unde laudantium alias recusandae 
         quas vitae, iure eos accusamus distinctio suscipit eius, veritatis libero enim.</p> -->
-    <nav>
+        <div class="container-fixed ">
         <div class="header">
             <div class="left_header">
-                <a href="#home"> Template</a>
+                <a href="#home"> <img src="images/logo.png" width="30px"/> </a>
             </div>
             <div class="right_header">
+                <div class="mobileMenu">
+                    <img src="images/menuIcon.png" alt="Business Templates" width="5px"/>
+                </div>
                 <ul class="nav-menu">
                     <li><a href="#home">Home</li></a>
                     <li><a href="#about">About</li></a>
@@ -27,8 +30,9 @@
                 </ul>
             </div>
         </div>
-    </nav>
-
+    </div>
+    
+<div class="">
 <div class="row home_section pulse" id="home">
      <div class="col-md-6">
         <img src="images/home-img2.png"/>
@@ -39,7 +43,9 @@
         </div>
     </div>
 </div>
+</div>
 
+<div class="container-fluid ">
 <div class="about_section row slideRight"  id="about">
     <p class="title_line">About Us</p>
     <div class="col-md-6">
@@ -51,7 +57,9 @@
         <img src="images/about_us1.png" alt="Image" width="300px">
     </div>
 </div>
+</div>
 
+<div class="container-fluid ">
 <div class="service_section row pulse" id="services">
     <p class="title_line">Services</p>
 <div class="col-md-4">
@@ -83,11 +91,11 @@
           Ipsam enim voluptas perferendis. Obcaecati quia nulla temporibus.</p>
 </div>
 </div>
-
-
+</div>
 </div>
 
-<div class="testmonial_section row slideRight" id="testimonials">
+<div class="container-fluid ">
+    <div class="testmonial_section row slideRight" id="testimonials">
     <p class="title_line">Testimonials</p>
     <div class="col-md-4">
         <div class="test_card">
@@ -119,7 +127,9 @@
     </div>
     </div>
  </div>
+</div>
 
+ <div class="container-fluid ">
  <div class="contact_section row pulse" id="contact_us">
     <p class="title_line">Contact Us</p>
     <div class="col-md-6 address_line">
@@ -128,7 +138,7 @@
         <p class="row"><span class="col-md-3">Email ID :</span> <span class="col-md-6"> <a href="mailto:aaa@gmail.com"> aaa@gmail.com</a> </span></p>
     </div>
     <div class="col-md-6">
-       <form>
+       <form class="contactForm">
          <div class="row">
              <div class="col-md-6">
                 <input type="text" name="fname" placeholder="First Name" class="form-control">
@@ -159,10 +169,43 @@
             </div>
         </div>
         </form>
-
     </div>
 </div>
+</div>
+<div class="topDiv" style="display: none;">
+    <div class="topSpan"><a href="#topHome"><img src="images/arrow.png" widtth="30px" height="30px" fill="white"/></a></div>	
+   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+   $(document).ready(function(){
+  	$('.mobileMenu img').click(function(){
+	 $('.header').toggleClass('headerMbl');
+	 $('.right_header').toggleClass('animate__animated animate__slideInLeft');
+     $('ul.nav-menu').toggle();
+ }); 
+});
 
+$(function(){
+            var scroll_anchor = $('.topDiv');
+            $( window ).scroll(function () {
+                if ( $( window ).width() > 300 ) {
+                    if ( $(this).scrollTop() > 250 ) {
+                        scroll_anchor.fadeIn('fast');
+                        return;
+                    }
+                }
+                scroll_anchor.fadeOut('fast');
+            });
+
+            scroll_anchor.on( 'click', function ( event ) {
+                event.preventDefault();
+                $('html, body').animate( { scrollTop:0 }, 'slow' );
+            });
+        });
+
+</script>
 </body>
 
 </html>
